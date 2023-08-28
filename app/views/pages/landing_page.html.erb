@@ -1,123 +1,125 @@
-<main>
-  <section class="h-96 flex justify-around items-center gap-10 bg-mainColor">
-    <div class="text-white text-center">
-      <p class="font-semibold text-3xl py-5">
-        Survey Rails App.
-      </p>
-      <p>
-        Create your first survey.
-      </p>
-      <p>
-        Start sending surveys to different companies around the word.
-      </p>
+<% unless current_user %>
+  <main>
+    <section class="h-96 flex justify-around items-center gap-10 bg-mainColor">
+      <div class="text-white text-center">
+        <p class="font-semibold text-3xl py-5">
+          Survey Rails App.
+        </p>
+        <p>
+          Create your first survey.
+        </p>
+        <p>
+          Start sending surveys to different companies around the word.
+        </p>
 
-      <div class="py-5 text-black">
-        <%= button_to root_path, id: "get_started" do %>
-          <div class="bg-signIn p-4 rounded-lg">
-            <i class="fa-solid fa-circle-arrow-right"></i>
-            <span class="ml-1">
+        <div class="py-5 text-black">
+          <%= button_to root_path, id: "get_started" do %>
+            <div class="bg-signIn p-4 rounded-lg">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+              <span class="ml-1">
               Get started.
             </span>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
+
+        <p class="text-sm font-semibold">
+          survey-rails-app.com
+        </p>
+      </div>
+      <div>
+        <%= image_tag("ruby.png", width: "300") %>
+      </div>
+    </section>
+
+    <section>
+      <div class="flex justify-around p-10">
+        <%= image_tag("Amazon.png", width: "150") %>
+        <%= image_tag("Facebook.png", width: "150") %>
+        <%= image_tag("Google.png", width: "150") %>
+        <%= image_tag("Instagram.png", width: "150") %>
+        <%= image_tag("LinkedIn.png", width: "150") %>
+        <%= image_tag("Spotify.png", width: "150") %>
+        <%= image_tag("Twitter.png", width: "150") %>
+      </div>
+      <p class="p-10 text-center text-sm font-semibold text-mainColor">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters!
+      </p>
+    </section>
+
+    <div class="border-4"></div>
+
+    <section class="h-96 flex justify-around items-center">
+      <div>
+        <%= image_tag("2126918.jpg", width: 350) %>
       </div>
 
-      <p class="text-sm font-semibold">
-        survey-rails-app.com
-      </p>
-    </div>
-    <div>
-      <%= image_tag("ruby.png", width: "300") %>
-    </div>
-  </section>
+      <div>
+        <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Working with your team</h2>
+        <p class=" text-sm text-center text-mainColor font-semibold">
+          It is a long established fact that a reader will be distracted <br/>
+          by the readable content of a page when looking at its layout. <br/>
+          The point of using Lorem Ipsum is that it has a more-or-less <br/>
+          normal distribution of letters!
+        </p>
+      </div>
+    </section>
 
-  <section>
-    <div class="flex justify-around p-10">
-      <%= image_tag("Amazon.png", width: "150") %>
-      <%= image_tag("Facebook.png", width: "150") %>
-      <%= image_tag("Google.png", width: "150") %>
-      <%= image_tag("Instagram.png", width: "150") %>
-      <%= image_tag("LinkedIn.png", width: "150") %>
-      <%= image_tag("Spotify.png", width: "150") %>
-      <%= image_tag("Twitter.png", width: "150") %>
-    </div>
-    <p class="p-10 text-center text-sm font-semibold text-mainColor">
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-      its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters!
-    </p>
-  </section>
+    <div class="border-4"></div>
 
-  <div class="border-4"></div>
+    <section class="h-96 flex justify-around items-center">
+      <div>
+        <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
+        <p class=" text-sm text-center text-mainColor font-semibold">
+          It is a long established fact that a reader will be distracted <br/>
+          by the readable content of a page when looking at its layout. <br/>
+          The point of using Lorem Ipsum is that it has a more-or-less <br/>
+          normal distribution of letters!
+        </p>
+      </div>
+      <div>
+        <%= image_tag("4048544.jpg", width: 350) %>
+      </div>
+    </section>
 
-  <section class="h-96 flex justify-around items-center">
-    <div>
-      <%= image_tag("2126918.jpg", width: 350) %>
-    </div>
+    <div class="border-4"></div>
 
-    <div>
-      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Working with your team</h2>
-      <p class=" text-sm text-center text-mainColor font-semibold">
-        It is a long established fact that a reader will be distracted <br/>
-        by the readable content of a page when looking at its layout. <br/>
-        The point of using Lorem Ipsum is that it has a more-or-less <br/>
-        normal distribution of letters!
-      </p>
-    </div>
-  </section>
+    <section class="h-96 flex flex-col justify-around items-center m-32">
+      <div>
+        <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
+      </div>
+      <div class="flex py-10 w-3/6 justify-between">
+        <%= image_tag("2978479.jpg", width: 320) %>
+        <%= image_tag("check_box_image.png", width: 250) %>
+      </div>
+      <div>
+        <p class=" text-sm text-center text-mainColor font-semibold">
+          It is a long established fact that a reader will be distracted
+          by the readable content of a page when looking at its layout.
+          The point of using Lorem Ipsum is that it has a more-or-less <br/>
+          normal distribution of letters!
+        </p>
+      </div>
+    </section>
 
-  <div class="border-4"></div>
+    <div class="border-4"></div>
 
-  <section class="h-96 flex justify-around items-center">
-    <div>
-      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
-      <p class=" text-sm text-center text-mainColor font-semibold">
-        It is a long established fact that a reader will be distracted <br/>
-        by the readable content of a page when looking at its layout. <br/>
-        The point of using Lorem Ipsum is that it has a more-or-less <br/>
-        normal distribution of letters!
-      </p>
-    </div>
-    <div>
-      <%= image_tag("4048544.jpg", width: 350) %>
-    </div>
-  </section>
-
-  <div class="border-4"></div>
-
-  <section class="h-96 flex flex-col justify-around items-center m-32">
-    <div>
-      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
-    </div>
-    <div class="flex py-10 w-3/6 justify-between">
-      <%= image_tag("2978479.jpg", width: 320) %>
-      <%= image_tag("check_box_image.png", width: 250) %>
-    </div>
-    <div>
-      <p class=" text-sm text-center text-mainColor font-semibold">
-        It is a long established fact that a reader will be distracted
-        by the readable content of a page when looking at its layout.
-        The point of using Lorem Ipsum is that it has a more-or-less <br/>
-        normal distribution of letters!
-      </p>
-    </div>
-  </section>
-
-  <div class="border-4"></div>
-
-  <section class="h-96 flex flex-col justify-center m-32">
-    <div>
-      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
-    </div>
-    <div class="flex py-10">
-      <%= image_tag("posting_image.png") %>
-    </div>
-    <div>
-      <p class=" text-sm text-center text-mainColor font-semibold">
-        It is a long established fact that a reader will be distracted
-        by the readable content of a page when looking at its layout.
-        The point of using Lorem Ipsum is that it has a more-or-less <br/>
-        normal distribution of letters!
-      </p>
-    </div>
-  </section>
-</main>
+    <section class="h-96 flex flex-col justify-center m-32">
+      <div>
+        <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
+      </div>
+      <div class="flex py-10">
+        <%= image_tag("posting_image.png") %>
+      </div>
+      <div>
+        <p class=" text-sm text-center text-mainColor font-semibold">
+          It is a long established fact that a reader will be distracted
+          by the readable content of a page when looking at its layout.
+          The point of using Lorem Ipsum is that it has a more-or-less <br/>
+          normal distribution of letters!
+        </p>
+      </div>
+    </section>
+  </main>
+<% end %>

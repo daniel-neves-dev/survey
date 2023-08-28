@@ -12,6 +12,7 @@ module.exports = {
       "mainColor": "#2c3639",
       "white": "#ffffff",
       "black": "#0000000",
+      "formBack":"#1f2937",
       "signIn": "#9ff1e5",
       "signUp": "#ecffc8",
       "fontColor": "#0c5d75",
