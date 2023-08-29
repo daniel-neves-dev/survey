@@ -15,7 +15,14 @@
   <body>
     <%= render 'layouts/main_navbar' %>
     <%= render 'layouts/messages' %>
-      <%= yield %>
+    <main class="flex justify-between">
+      <div>
+        <%= yield %>
+      </div>
+      <nav class="bg-footerGray p-2">
+        <%= render 'layouts/right_navbar' %>
+      </nav>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
