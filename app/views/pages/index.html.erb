@@ -1,18 +1,31 @@
-<% if user_signed_in? %>
-  <section>
-    <div>
-      <h1>Survey Rails App.</h1>
-      <span>survey-rails-app.com</span>
-      <p>
-        There are many variations of passages of Lorem Ipsum available,<br />
-        but the majority have suffered alteration in some form, by injected humour, or randomised words<br />
-        which don't look even slightly believable.
-      </p>
-    </div>
+<section class="flex justify-around items-center h-screen">
+  <div>
+    <h1 class="text-center font-bold text-mainColor text-3xl">Survey Rails App.</h1>
+    <span class="text-center font-semibold text-sm text-mainColor ">survey-rails-app.com</span>
+    <p class="py-5 font-semibold text-mainColor text-sm">
+      There are many variations of passages of Lorem Ipsum available,<br/>
+      but the majority have suffered alteration in some form, by injected humour, or randomised words<br/>
+      which don't look even slightly believable.
+    </p>
 
-    <div>
-      <%= image_tag("3254897.jpg", width: 300) %>
+    <div class="flex w-full justify-around">
+      <div class="bg-evaluationStrong p-3 text-white text-sm font-semibold rounded-lg">
+        <%= button_to root_path, id:"create_evaluation_index" do %>
+          Create evaluation.
+        <% end %>
+      </div>
+      <div class="bg-chapterStrong p-3 text-white text-sm font-semibold rounded-lg">
+        <%= button_to root_path, id:"create_evaluation_index" do %>
+          Create evaluation.
+        <% end %>
+      </div>
     </div>
-  </section>
-<% end %>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <span class="text-center text-lg font-semibold text-mainColor">You are in!!!</span>
+    <%= image_tag("3254897.jpg", width: 300) %>
+  </div>
+</section>
+
 
