@@ -3,7 +3,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations or /evaluations.json
   def index
-    @evaluations = Evaluation.all
+    @evaluations = Section.all
   end
 
   # GET /evaluations/1 or /evaluations/1.json
@@ -12,7 +12,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations/new
   def new
-    @evaluation = Evaluation.new
+    @evaluation = Section.new
   end
 
   # GET /evaluations/1/edit
@@ -21,7 +21,7 @@ class EvaluationsController < ApplicationController
 
   # POST /evaluations or /evaluations.json
   def create
-    @evaluation = Evaluation.new(evaluation_params)
+    @evaluation = Section.new(evaluation_params)
 
     respond_to do |format|
       if @evaluation.save
