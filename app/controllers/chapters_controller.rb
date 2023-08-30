@@ -3,7 +3,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters or /chapters.json
   def index
-    @chapters = Chapter.all
+    @chapters = Section.all
   end
 
   # GET /chapters/1 or /chapters/1.json
@@ -12,7 +12,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
-    @chapter = Chapter.new
+    @chapter = Section.new
   end
 
   # GET /chapters/1/edit
@@ -21,7 +21,7 @@ class ChaptersController < ApplicationController
 
   # POST /chapters or /chapters.json
   def create
-    @chapter = Chapter.new(chapter_params)
+    @chapter = Section.new(chapter_params)
 
     respond_to do |format|
       if @chapter.save
