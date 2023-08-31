@@ -1,4 +1,5 @@
-<%= form_with(url: evaluations_url ,method: :post) do |form|  %>
+<%= form_with(model: @evaluation, url: evaluations_url ,method: :post,
+              data: { controller: "reset", action:"submit->reset#resetForm"}) do |form|  %>
   <div class="flex flex-col py-4">
     <%= form.label :name, class: "text-white font-semibold" %>
     <%= form.text_field :name, class: "p-2 rounded-lg text-sm font-semibold" %>

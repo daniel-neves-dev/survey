@@ -1,1 +1,5 @@
-<%= render 'evaluations/welcome' %>
+<% if @evaluations.any? %>
+  <%= render "evaluations", evaluations: @evaluations %>
+<% else %>
+  <%= render 'evaluations/welcome' %>
+<% end %>

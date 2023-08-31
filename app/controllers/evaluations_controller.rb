@@ -21,11 +21,14 @@ class EvaluationsController < ApplicationController
 
   # POST /evaluations or /evaluations.json
   def create
-    @evaluation = Section.new(evaluation_params)
+    @evaluation = current_user.sections.build(evaluation_params)
+    @evaluation.section_type = 1
 
     respond_to do |format|
       if @evaluation.save
-        format.html { redirect_to evaluation_url(@evaluation), notice: "Evaluation was successfully created." }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('evaluations_all',
+                                                                       partial:'evaluations/evaluations',
+                                                                       locals: {evaluations: Section.all})}
         format.json { render :show, status: :created, location: @evaluation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +68,6 @@ class EvaluationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def evaluation_params
-      params.require(:evaluation).permit(:name, :description, :type, :body, :user_id)
+      params.require(:section).permit(:name, :body)
     end
 end

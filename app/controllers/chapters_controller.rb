@@ -23,6 +23,7 @@ class ChaptersController < ApplicationController
   def create
     @chapter = Section.new(chapter_params)
 
+
     respond_to do |format|
       if @chapter.save
         format.html { redirect_to chapter_url(@chapter), notice: "Chapter was successfully created." }

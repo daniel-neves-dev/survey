@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_180236) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_31_205245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "sections", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "type"
+    t.integer "section_type", default: 0
     t.text "body"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
