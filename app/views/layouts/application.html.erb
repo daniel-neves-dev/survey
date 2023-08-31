@@ -17,6 +17,7 @@
     <%= render 'layouts/messages' %>
     <main class="justify-between flex">
       <div class="w-full">
+        <%= turbo_frame_tag 'modal' %>
         <%= yield %>
       </div>
       <nav class="bg-footerGray p-2">
