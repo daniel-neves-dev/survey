@@ -3,7 +3,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations or /evaluations.json
   def index
-    @evaluations = Section.all
+    @evaluations = Section.all.order(created_at: :desc)
   end
 
   # GET /evaluations/1 or /evaluations/1.json
@@ -63,11 +63,11 @@ class EvaluationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evaluation
-      @evaluation = Evaluation.find(params[:id])
+      @evaluation = Section.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def evaluation_params
-      params.require(:section).permit(:name, :body)
+      params.require(:section).permit(:name, :body, :description)
     end
 end
