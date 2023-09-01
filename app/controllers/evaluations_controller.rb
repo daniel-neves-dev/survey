@@ -68,6 +68,6 @@ class EvaluationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def evaluation_params
-      params.require(:section).permit(:name, :body, :description)
+      params.require(:section).permit(:name, :description)
     end
 end
