@@ -1,0 +1,25 @@
+<div data-controller="reset" class="m-5 border-2 w-3/12 py-10 bg-footerGray rounded-lg items-center justify-center flex">
+  <%= form_for [@evaluation, @question], url: section_question_create_path(@evaluation),
+               data:{action: 'submit->reset#questionForm'} do |form| %>
+
+    <h4 class="text-2xl font-semibold text-evaluationStrong text-center py-1">Create Question</h4>
+
+    <div class=" flex flex-col py-3">
+      <%= form.label :name, class:"text-evaluationStrong  font-semibold py-1" %>
+      <%= form.text_field :name, class:"p-2 rounded-lg text-sm font-semibold" %>
+    </div>
+
+    <div class=" flex flex-col py-3">
+      <%= form.label :question_type, class:"text-evaluationStrong  font-semibold py-1" %>
+      <%= form.select :question_type, options_for_select(Question.question_types.map {
+        |key, value| [key.titleize, Question.question_types.key(value)] }, @question.question_type ) %>
+    </div>
+
+    <div class="flex py-5 justify-center">
+      <span class="bg-evaluationStrong rounded-lg">
+        <%= form.submit "Create Question", class:"text-sm font-semibold p-3 text-white" %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
