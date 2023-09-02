@@ -8,6 +8,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations/1 or /evaluations/1.json
   def show
+    @question = Question.new
   end
 
   # GET /evaluations/new
@@ -29,10 +30,8 @@ class EvaluationsController < ApplicationController
         format.turbo_stream { render turbo_stream: turbo_stream.replace('evaluations_all',
                                                                        partial:'evaluations/evaluations',
                                                                        locals: {evaluations: Section.grab_all_evaluations})}
-        format.json { render :show, status: :created, location: @evaluation }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @evaluation.errors, status: :unprocessable_entity }
       end
     end
   end

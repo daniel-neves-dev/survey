@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :sections do
+    post "question/create", to: "questions#create"
+  end
+
   resources :chapters
   resources :evaluations
   devise_for :users
