@@ -42,10 +42,8 @@ class EvaluationsController < ApplicationController
     respond_to do |format|
       if @evaluation.update(evaluation_params)
         format.html { redirect_to evaluation_url(@evaluation), notice: "Evaluation was successfully updated." }
-        format.json { render :show, status: :ok, location: @evaluation }
-      else
+              else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @evaluation.errors, status: :unprocessable_entity }
       end
     end
   end

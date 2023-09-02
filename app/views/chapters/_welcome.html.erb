@@ -1,0 +1,24 @@
+<%= turbo_frame_tag 'modal' %>
+<section class="flex flex-row-reverse justify-around items-center p-32" id="chapters_all">
+  <div>
+    <%= image_tag("4884176.jpg", width: 500) %>
+  </div>
+
+  <div>
+    <h1 class="text-center text-3xl font-bold text-chapterStrong">Chapters</h1>
+    <p class=" text-center py-2 font-semibold text-chapterStrong">
+      It is a long established fact that a reader will be distracted by the readable<br/>
+      content of a page when looking at its layout. The point of using Lorem Ipsum is that it<br/>
+      has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',<br/>
+      making it look like readable English.
+    </p>
+
+    <div class="flex justify-center my-4">
+      <%= link_to new_chapter_path, id:"create_chapter_welcome", data: {turbo_frame: 'modal'} do %>
+        <div class="p-3 bg-chapterStrong text-white text-sm font-semibold rounded-lg">
+          Create
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
