@@ -3,7 +3,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters or /chapters.json
   def index
-    @chapters = Section.all
+    @chapters = Section.grab_all_chapters
   end
 
   # GET /chapters/1 or /chapters/1.json
@@ -28,7 +28,7 @@ class ChaptersController < ApplicationController
       if @chapter.save
         format.turbo_stream { render turbo_stream: turbo_stream.replace('chapters_all',
                                                                         partial:'chapters/chapters',
-                                                                        locals: {chapters: Section.all})}
+                                                                        locals: {chapters: Section.grab_all_chapters})}
       else
         format.html { render :new, status: :unprocessable_entity }
       end

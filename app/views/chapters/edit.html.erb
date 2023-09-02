@@ -1,3 +1,3 @@
 <%= render 'layouts/modal', title:"Update Chapter" do %>
-  <%= render 'form', url: chapter_path(@chapter) %>
+  <%= render 'form', {url: chapter_path(@chapter), button_text:"Update Chapter"} %>
 <% end %>

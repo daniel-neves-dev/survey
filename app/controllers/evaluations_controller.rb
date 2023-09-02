@@ -3,7 +3,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations or /evaluations.json
   def index
-    @evaluations = Section.all.order(created_at: :desc)
+    @evaluations = Section.grab_all_evaluations
   end
 
   # GET /evaluations/1 or /evaluations/1.json
@@ -28,7 +28,7 @@ class EvaluationsController < ApplicationController
       if @evaluation.save
         format.turbo_stream { render turbo_stream: turbo_stream.replace('evaluations_all',
                                                                        partial:'evaluations/evaluations',
-                                                                       locals: {evaluations: Section.all})}
+                                                                       locals: {evaluations: Section.grab_all_evaluations})}
         format.json { render :show, status: :created, location: @evaluation }
       else
         format.html { render :new, status: :unprocessable_entity }
